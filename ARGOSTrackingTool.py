@@ -41,12 +41,17 @@ for lineString in line_list:
     obs_lat = lineData[6]
     obs_lon = lineData[7]
 
-    # created dictionaries above to introduce them, but 
-    # we cannot fill them until we're in the loop. It would have
-    # been possible to use curly bracket formatting below as well
-    #but the syntax here is more readable/direct
-    date_dict[record_id] = obs_date
-    location_dict[record_id] = (obs_lat,obs_lon)
-    
+    if obs_lc in ("1","2","3"):
+        # created dictionaries above to introduce them, but 
+        # we cannot fill them until we're in the loop. It would have
+        # been possible to use curly bracket formatting below as well
+        #but the syntax here is more readable/direct
+        date_dict[record_id] = obs_date
+        location_dict[record_id] = (obs_lat,obs_lon)
+
     #Print the location of sara
     print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat},lon:{obs_lon} on {obs_date}")
+
+    #How does it work?
+    # Print (location_dict['20616']) = will print the location coordinates for ID# 20616
+
